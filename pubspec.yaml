@@ -60,7 +60,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/Netflix-Logo.png
+    - assets/logos_netflix.png
+    - assets/bx_bxs-pencil.png
+    - assets/kids.png
+    - assets/user_one.png
+    - assets/user_two.png
+    - assets/user_three.png
+    - assets/addButton.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

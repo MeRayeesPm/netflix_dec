@@ -1,7 +1,11 @@
 // import 'dart:nativewrappers/_internal/vm/lib/async_patch.dart';
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:netflix_dec/utils/color_constants.dart';
+import 'package:netflix_dec/utils/image_constants.dart';
+import 'package:netflix_dec/view/user_name_screen/user_name_screen.dart';
 // import 'package:netflix_dec/view/user_name_screen/user_name_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,19 +17,19 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  // void initState() {
-  //   Timer() {
-  //     Navigator.pushReplacement(
-  //       context,
-  //       MaterialPageRoute(
-  //         builder: (context) => UserNameScreen(),
-  //       ),
-  //     );
-  //   }
-
-  //   ;
-  //   super.initState();
-  // }
+  void initState() {
+    Timer(
+      Duration(seconds: 3),
+      () {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => UserNameScreen(),
+            ));
+      },
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network("assets/Netflix-Logo.png"),
+            Image.network(ImageConstants.netflixPrimaryLogo),
             SizedBox(
               height: 20,
             ),
