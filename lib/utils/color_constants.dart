@@ -5,4 +5,5 @@ class ColorConstants {
   static const Color mainWhite = Colors.white;
   static const Color mainRed = Colors.red;
   static const Color mainAmber = Colors.amber;
+  static const Color mainGrey = Colors.grey;
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_dec/utils/color_constants.dart';
-import 'package:netflix_dec/utils/database.dart';
+import 'package:netflix_dec/utils/dummy,db.dart';
 import 'package:netflix_dec/utils/image_constants.dart';
+import 'package:netflix_dec/view/bottom_nav_screen/bottom_nav_screen.dart';
+import 'package:netflix_dec/view/home_screen/home_screen.dart';
 
 class UserNameScreen extends StatelessWidget {
   const UserNameScreen({super.key});
@@ -34,65 +36,77 @@ class UserNameScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 80),
           child: GridView.builder(
             shrinkWrap: true,
-            itemCount: DbData.userNameImages.length + 1,
+            itemCount: DummyDb.userNameImages.length + 1,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 5,
               crossAxisSpacing: 5,
             ),
             itemBuilder: (context, index) => index <
-                    DbData.userNameImages.length
+                    DummyDb.userNameImages.length
                 ? InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      // write code to navigator to home screen
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BottomNavScreen(),
+                          ));
+                    },
                     child: Column(
                       children: [
                         Container(
-                          height: 100,
-                          width: 100,
+                          height: 70,
+                          width: 70,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: ColorConstants.mainWhite,
                               image: DecorationImage(
                                   image: AssetImage(
-                                      DbData.userNameImages[index]["image"]!),
+                                      DummyDb.userNameImages[index]["image"]!),
                                   fit: BoxFit.cover)),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
-                          DbData.userNameImages[index]["name"]!,
+                          DummyDb.userNameImages[index]["name"]!,
                           style: TextStyle(color: ColorConstants.mainWhite),
                         )
                       ],
                     ),
                   )
-                : Column(
-                    children: [
-                      SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: Center(
-                          child: Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        ImageConstants.addButtonImage),
-                                    fit: BoxFit.cover)),
+                : InkWell(
+                    onTap: () {
+                      print("add user button clicked");
+                    },
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Center(
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ImageConstants.addButtonImage),
+                                      fit: BoxFit.cover)),
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Add",
-                        style: TextStyle(color: ColorConstants.mainWhite),
-                      )
-                    ],
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Add",
+                          style: TextStyle(color: ColorConstants.mainWhite),
+                        )
+                      ],
+                    ),
                   ),
           ),
         ),

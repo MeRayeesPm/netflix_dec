@@ -67,6 +67,10 @@ flutter:
     - assets/user_two.png
     - assets/user_three.png
     - assets/addButton.png
+    - assets/HomeImage.png
+    - assets/logos_netflix-icon.png
+    - assets/Group 16.png
+    - assets/#2 in Nigeria Today.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
