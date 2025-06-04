@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_dec/utils/color_constants.dart';
 import 'package:netflix_dec/view/comming_soon_screen/comming_soon_screen.dart';
+import 'package:netflix_dec/view/download_screen/download_screen.dart';
 import 'package:netflix_dec/view/home_screen/home_screen.dart';
+import 'package:netflix_dec/view/menu_screen/menu_screen.dart';
 import 'package:netflix_dec/view/search_screen%20copy/search_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -16,12 +18,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     HomeScreen(),
     SearchSreen(),
     CommingSoonScreen(),
-    Center(
-      child: Text("download screen"),
-    ),
-    Center(
-      child: Text("more screen"),
-    ),
+    DownloadScreen(),
+    MenuScreen(),
   ];
 
   int selectedIndex = 0;

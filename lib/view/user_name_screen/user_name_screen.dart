@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_dec/global_widget/user_name_card.dart';
 import 'package:netflix_dec/utils/color_constants.dart';
 import 'package:netflix_dec/utils/dummy,db.dart';
 import 'package:netflix_dec/utils/image_constants.dart';
@@ -42,72 +43,53 @@ class UserNameScreen extends StatelessWidget {
               mainAxisSpacing: 5,
               crossAxisSpacing: 5,
             ),
-            itemBuilder: (context, index) => index <
-                    DummyDb.userNameImages.length
-                ? InkWell(
-                    onTap: () {
-                      // write code to navigator to home screen
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BottomNavScreen(),
-                          ));
-                    },
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 70,
-                          width: 70,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: ColorConstants.mainWhite,
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      DummyDb.userNameImages[index]["image"]!),
-                                  fit: BoxFit.cover)),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          DummyDb.userNameImages[index]["name"]!,
-                          style: TextStyle(color: ColorConstants.mainWhite),
-                        )
-                      ],
-                    ),
-                  )
-                : InkWell(
-                    onTap: () {
-                      print("add user button clicked");
-                    },
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 100,
-                          width: 100,
-                          child: Center(
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          ImageConstants.addButtonImage),
-                                      fit: BoxFit.cover)),
+            itemBuilder: (context, index) =>
+                index < DummyDb.userNameImages.length
+                    ? InkWell(
+                        onTap: () {
+                          // write code to navigator to home screen
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavScreen(),
+                              ));
+                        },
+                        child: UserNameCardWidget(
+                            name: DummyDb.userNameImages[index]["name"]!,
+                            imageUrl: DummyDb.userNameImages[index]["image"]!),
+                      )
+                    : InkWell(
+                        onTap: () {
+                          print("add user button clicked");
+                        },
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 100,
+                              width: 100,
+                              child: Center(
+                                child: Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              ImageConstants.addButtonImage),
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Add",
+                              style: TextStyle(color: ColorConstants.mainWhite),
+                            )
+                          ],
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Add",
-                          style: TextStyle(color: ColorConstants.mainWhite),
-                        )
-                      ],
-                    ),
-                  ),
+                      ),
           ),
         ),
       ),

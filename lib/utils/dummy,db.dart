@@ -20,6 +20,7 @@ class DummyDb {
     "https://images.pexels.com/photos/2752777/pexels-photo-2752777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   ];
 
+// for search screen top searches list
   static List<Map<String, String>> searchScreenDatas = [
     {
       "imageUrl":
@@ -112,6 +113,7 @@ class DummyDb {
     },
   ];
 
+// data for coming soon Movie list
   static List<Map<String, dynamic>> notificationMovieList = [
     {
       "title": "Dune: Part Two",
