@@ -12,7 +12,7 @@ class CustomSearchSreenCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
+      color: ColorConstants.mainDarkGrey,
       child: Row(
         children: [
           Container(

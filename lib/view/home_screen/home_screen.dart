@@ -81,8 +81,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Text(
                     "My List",
-                    style: TextStyle(
-                        color: const Color.fromARGB(255, 216, 152, 152)),
+                    style: TextStyle(color: ColorConstants.mainWhite),
                   ),
                 ],
               ),
@@ -92,21 +91,24 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 decoration: BoxDecoration(
-                    color: ColorConstants.mainGrey,
+                    color: ColorConstants.mainWhite,
                     borderRadius: BorderRadius.circular(6)),
                 child: Row(
                   children: [
                     Icon(
                       Icons.play_arrow_sharp,
                       size: 21,
+                      color: Colors.black,
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Text(
                       "play",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300),
                     ),
                   ],
                 ),
@@ -131,6 +133,7 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
+          //1
           CustomMovieCard(
             height: 100,
             width: 100,
@@ -138,20 +141,47 @@ class HomeScreen extends StatelessWidget {
             isCircular: true,
             imagesList: DummyDb.movieImageUrls,
           ),
+          //2
           CustomMovieCard(
-            title: "Continue Watching For",
-            imagesList: DummyDb.movieImageUrls,
+            title: "Continue Watching For Emenalo",
+            imagesList: DummyDb.movieImageUrls2,
             isOptionVisble: true,
           ),
+          //3
+          CustomMovieCard(
+            title: "Popular for Netflix",
+            imagesList: DummyDb.movieImageUrls3,
+          ),
+          //4
+          CustomMovieCard(
+            title: "Trending Now",
+            imagesList: DummyDb.movieImageUrls4,
+          ),
+          //5
+          CustomMovieCard(
+            title: "My List",
+            imagesList: DummyDb.movieImageUrls5,
+          ),
+          //6
+          CustomMovieCard(
+            title: "Nollywood Movies",
+            imagesList: DummyDb.movieImageUrls6,
+          ),
+          //7
           CustomMovieCard(
             height: 251,
             width: 154,
-            title: "Continue Watching For",
-            imagesList: DummyDb.movieImageUrls,
-          ),
+            title: "Netflix Orginals",
+            imagesList: DummyDb.movieImageUrls7,
+          ), //8
           CustomMovieCard(
-            title: "Continue Watching For",
-            imagesList: DummyDb.movieImageUrls,
+            title: "Watch It Again",
+            imagesList: DummyDb.movieImageUrls8,
+          ),
+          //9
+          CustomMovieCard(
+            title: "US TV Shows",
+            imagesList: DummyDb.movieImageUrls9,
           ),
         ],
       ),
